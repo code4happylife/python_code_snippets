@@ -1,7 +1,7 @@
 with open('./domain', 'rb') as f:
         with open('./new_domain', 'wa') as f1:
                 for l in f.readlines():
-                        new_line="nslookup "+"www"+l[0:-2]+"\n"
+                        new_line="nslookup "+"www"+l[0:-2]+" >/dev/null 2>&1  &"+"\n"
                         f1.write(new_line)
               
 '''
